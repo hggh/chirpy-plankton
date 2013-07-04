@@ -3,9 +3,23 @@
 <h1>Receive your password</h1>
 
 
-<% if @password_value %>
+<% if @data %>
+
+  <% if @data[:username] and @data[:username] != '' %>
+  <div style="padding-top:30px;padding-bottom:30px;font-size:13pt;">
+  <i>Your Username</i>: <span style="background-color: #decfce;"><%= h @data[:username] %></span>
+  </div>
+  <% end %>
+
+  <% if @data[:url] and @data[:url] != '' %>
+  <div style="padding-top:30px;padding-bottom:30px;font-size:13pt;">
+  <i>Your URL</i>: <span style="background-color: #decfce;"><a hef="<%= h @data[:url] %>"><%= h @data[:url] %></a></span>
+  </div>
+  <% end %>
+
+
 <div style="padding-top:30px;padding-bottom:30px;font-size:13pt;">
-<i>Your Password</i>: <span style="background-color: #decfce;"><%= h @password_value %></span>
+<i>Your Password</i>: <span style="background-color: #decfce;"><%= h @data[:password] %></span>
 </div>
 
 <div class="alert alert-error" style="font-size: 14pt">

@@ -8,20 +8,25 @@ module PasswordExchange
       require "password_exchange/storage/#{@config.storage}"
     end
 
-    def get_value(keyname)
+    def get_values(keyname)
       @backend = Storage.const_get(storage_backend_class_name).new(@config)
-      value = @backend.get(keyname)
+      data = @backend.get(keyname)
+      password = data[:password]
       @backend.delete(keyname)
       crypt = PasswordExchange::Crypter.new(@config.cryptkey, @config.cipher)
-      crypt.decrypt(value)
+      password = crypt.decrypt(password)
+      data[:password] = password
+      data
     end
 
-    def set_value(value)
+    def set_values(values)
       @backend = Storage.const_get(storage_backend_class_name).new(@config)
       crypt = PasswordExchange::Crypter.new(@config.cryptkey, @config.cipher)
-      value = crypt.encrypt(value)
+      password = values[:password]
+      password = crypt.encrypt(password).gsub(/\s+/, "")
       random = SecureRandom.urlsafe_base64(48,true)
-      @backend.set(random, value)
+      values[:password] = password
+      @backend.set(random, values)
       random
     end
 
