@@ -1,0 +1,31 @@
+<%= erb :header %>
+
+<h1>Receive your password</h1>
+
+
+<% if @password_value %>
+<div style="padding-top:30px;padding-bottom:30px;font-size:13pt;">
+<i>Your Password</i>: <span style="background-color: #decfce;"><%= h @password_value %></span>
+</div>
+
+<div class="alert alert-error" style="font-size: 14pt">
+  <strong>Achtung:</strong> Bitte Passwort notieren - es kann nicht nochmals über diese Adresse abgerufen werden!
+</div>
+
+<br/>
+
+<div class="well">
+  <strong>Zur lokalen Speicherung</strong> der Passwörter ist die Verwendung eines <strong>Passwortsafes</strong> wie <strong>KeePass</strong> empfohlen!
+  <br/><br/>
+  KeePass Password Safe: <a href="http://keepass.info/" target="_new">http://keepass.info/</a>
+</div>
+
+<% else %>
+
+<div class="alert alert-error" style="margin-top:80px;font-size: 14pt;">
+  <strong>Achtung:</strong> Password wurde schon abgerufen, oder Key nicht gefunden!
+</div>
+
+<% end %>
+
+<%= erb :footer %>

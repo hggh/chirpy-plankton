@@ -1,0 +1,11 @@
+<%= erb :header %>
+
+<h1>Password stored!</h1>
+
+<div class="well" style="margin-top:30px; margin-botton:30px;">
+<strong>you can access password once at:</strong>
+<br/>
+<span style="margin-left:15px;"><%= base_url %>/receive/<%= @keyname %></span>
+</div>
+
+<%= erb :footer %>

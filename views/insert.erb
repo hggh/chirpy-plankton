@@ -1,0 +1,24 @@
+<%= erb :header %>
+
+<h1>Insert new Password for User</h1>
+
+<p>
+<br/>
+</p>
+
+<form class="form-horizontal" method="post">
+  <div class="control-group">
+    <label class="control-label" for="inputPassword">Password</label>
+    <div class="controls">
+      <input class="input-xxlarge" type="password" id="password_text" name="password_text" placeholder="Password">
+    </div>
+  </div>
+
+  <div class="control-group">
+    <div class="controls">
+      <button type="submit" class="btn">Store Password!</button>
+    </div>
+  </div>
+</form>
+
+<%= erb :footer %>
