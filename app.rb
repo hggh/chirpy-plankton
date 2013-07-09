@@ -60,9 +60,9 @@ post '/insert' do
   if params[:password_text] and params[:password_text] != ""
     storage = PasswordExchange::Storage.new(config)
     data = {
-      :password => params[:password_text].delete('\n'),
-      :username => params[:username_text].delete('\n'),
-      :url      => params[:url_text].delete('\n')
+      :password => params[:password_text],
+      :username => params[:username_text],
+      :url      => params[:url_text]
     }
     @keyname = storage.set_values(data)
   else
