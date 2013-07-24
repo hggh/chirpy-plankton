@@ -24,9 +24,9 @@ exclude Google bot or Google mail to open the unique password url!
 
 Screenshots
 ----------------
-- https://github.com/hggh/chirpy-plankton/tree/master/screeenshots/0_insert.png
-- https://github.com/hggh/chirpy-plankton/tree/master/screeenshots/1_receive.png
-- https://github.com/hggh/chirpy-plankton/tree/master/screeenshots/2_stored.png
+- https://github.com/hggh/chirpy-plankton/tree/master/screenshots/0_insert.png
+- https://github.com/hggh/chirpy-plankton/tree/master/screenshots/1_receive.png
+- https://github.com/hggh/chirpy-plankton/tree/master/screenshots/2_stored.png
 
 
 Installation on Debian
